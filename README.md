@@ -1,2 +1,0 @@
-# keksik
-Just another repository
