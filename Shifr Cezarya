@@ -27,7 +27,7 @@ public class Main
 
 		for (int x = 0; x < arrayexample.length; x++)
 		{
-			System.out.print(arrayexample[x]+" ");
+			System.out.print(arrayexample[x] + " ");
 		}
 		System.out.println(" ");
 		System.out.println(" ");
@@ -42,9 +42,31 @@ public class Main
 				}
 			}
 		}
+		System.out.println("Зашифрованное предложение: ");
 		for (int x = 0; x < array2.length; x++)
 			System.out.print(array2[x]);
 
 
+		char arrayx[] = new char[array1.length];
+
+		for (int x = 0; x < array2.length; x++)
+		{
+			for (int y = 0; y < arrayexample.length; y++)
+			{
+				if (array2[x] == arrayexample[y])
+				{
+					arrayx[x] = (char) (arrayexample[y] - key);
+				}
+			}
+		}
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("Дешифрованное предложение: ");
+		for (int x = 0 ; x<arrayx.length;x++)
+		{
+			System.out.print(arrayx[x]);
+		}
 	}
 }
+
