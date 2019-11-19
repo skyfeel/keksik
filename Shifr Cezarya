@@ -1,0 +1,50 @@
+package com.company;
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Введите предложение:");
+		String sentence = scanner.nextLine();
+		System.out.println("Введите ключ");
+		int key = scanner.nextInt();
+		char array1[] = sentence.toCharArray();
+		for (int x = 0; x < array1.length; x++)
+			System.out.print(array1[x]);
+		char arrayexample[] = new char[32];
+		int nums = 0;
+		for (char i = 'а'; i <= 'я'; i++)
+		{
+			arrayexample[nums] = i;
+			nums++;
+		}
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+
+		for (int x = 0; x < arrayexample.length; x++)
+		{
+			System.out.print(arrayexample[x]+" ");
+		}
+		System.out.println(" ");
+		System.out.println(" ");
+		char array2[] = new char[array1.length];
+		for (int x = 0; x < array1.length; x++)
+		{
+			for (int y = 0; y < arrayexample.length; y++)
+			{
+				if (array1[x] == arrayexample[y])
+				{
+					array2[x] = (char) (arrayexample[y] + key);
+				}
+			}
+		}
+		for (int x = 0; x < array2.length; x++)
+			System.out.print(array2[x]);
+
+
+	}
+}
