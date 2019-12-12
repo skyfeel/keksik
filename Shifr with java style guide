@@ -1,0 +1,71 @@
+package com.company;
+
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Введите предложение:");
+		String sentence = scanner.nextLine();
+		System.out.println("Введите ключ");
+		int key = scanner.nextInt();
+		char array_of_symbols[] = sentence.toCharArray();
+		for (int x = 0; x <  array_of_symbols.length; x++)
+			System.out.print( array_of_symbols[x]);
+		char arrayexample[] = new char[32];
+		int nums = 0;
+		for (char i = 'а'; i <= 'я'; i++)
+		{
+			arrayexample[nums] = i;
+			nums++;
+		}
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+
+		for (int x = 0; x < arrayexample.length; x++)
+		{
+			System.out.print(arrayexample[x] + " ");
+		}
+		System.out.println(" ");
+		System.out.println(" ");
+		char encrypted_sentense[] = new char[ array_of_symbols.length];
+		for (int x = 0; x <  array_of_symbols.length; x++)
+		{
+			for (int y = 0; y < arrayexample.length; y++)
+			{
+				if ( array_of_symbols[x] == arrayexample[y])
+				{
+					encrypted_sentense[x] = (char) (arrayexample[y] + key);
+				}
+			}
+		}
+		System.out.println("Зашифрованное предложение: ");
+		for (int x = 0; x < encrypted_sentense.length; x++)
+			System.out.print(encrypted_sentense[x]);
+
+
+		char decrypted[] = new char[ array_of_symbols.length];
+
+		for (int x = 0; x < encrypted_sentense.length; x++)
+		{
+			for (int y = 0; y < arrayexample.length; y++)
+			{
+				if (encrypted_sentense[x] == arrayexample[y])
+				{
+					decrypted[x] = (char) (arrayexample[y] - key);
+				}
+			}
+		}
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println(" ");
+		System.out.println("Дешифрованное предложение: ");
+		for (int x = 0; x < decrypted.length; x++)
+		{
+			System.out.print(decrypted[x]);
+		}
+	}
+}
